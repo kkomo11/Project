@@ -9,12 +9,14 @@ public class Game {
 		if(difficulty == 1) {
 			System.out.println("난이도 1");
 			check = util.firstCheck();
+			mf.makeField();
 			while(flag) {
-				mf.makeField();
 				if(check) { // 플레이어1 공격
-					// 체크 변경
+					util.playerTurn();
+					check = !check;
 				} else { // 플레이어2 공격
-					// 체크 변경
+					util.player2Turn();
+					check = !check;
 				}
 				// 승패체크
 				// 둘 곳 없는지 체크
